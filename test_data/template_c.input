@@ -1,0 +1,1 @@
+{{template "template_a.input"}} {{template "template_b.input"}} c
