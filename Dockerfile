@@ -8,8 +8,8 @@ COPY go.mod *.go ./
 RUN CGO_ENABLED=0 go build -o gostmplcli
 
 
-FROM golang:1.17
-WORKDIR /
+FROM gcr.io/distroless/static
+WORKDIR /app
 
 COPY --from=builder /github.com/jesusnoseq/gostmplcli/gostmplcli /
 
