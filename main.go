@@ -48,7 +48,12 @@ func main() {
 		conf.outputWriter = os.Stdout
 	} else {
 		f, err := os.Create(output)
-		defer f.Close()
+		defer func() {
+			err := f.Close()
+			if err != nil {
+				fmt.Fprintln(os.Stderr, "error closing file:", err)
+			}
+		}()
 		if err != nil {
 			fmt.Fprintln(os.Stderr, "error creating file:", err)
 		}

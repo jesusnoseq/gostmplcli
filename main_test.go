@@ -69,7 +69,7 @@ func TestParseFlagsUsage(t *testing.T) {
 			if !reflect.ValueOf(conf).IsZero() {
 				t.Errorf("conf got %v, want nil", conf)
 			}
-			if strings.Index(output, "Usage of") < 0 {
+			if !strings.Contains(output, "Usage of") {
 				t.Errorf("output can't find \"Usage of\": %q", output)
 			}
 		})
@@ -90,10 +90,10 @@ func TestParseFlagsError(t *testing.T) {
 			if !reflect.ValueOf(conf).IsZero() {
 				t.Errorf("conf got %v, want nil", conf)
 			}
-			if strings.Index(err.Error(), tt.errstr) < 0 {
+			if !strings.Contains(err.Error(), tt.errstr) {
 				t.Errorf("err got %q, want to find %q", err.Error(), tt.errstr)
 			}
-			if strings.Index(output, "Usage of prog") < 0 {
+			if !strings.Contains(output, "Usage of prog") {
 				t.Errorf("output got %q", output)
 			}
 		})
@@ -150,7 +150,7 @@ func TestGenerateTemplateWithFiles(t *testing.T) {
 				t.Errorf("got no error but error %s was expected", tt.errStr)
 			}
 			if err != nil && tt.errStr != "" {
-				if strings.Index(err.Error(), tt.errStr) < 0 {
+				if !strings.Contains(err.Error(), tt.errStr) {
 					t.Errorf("got [%s] but [%s] was expected", err.Error(), tt.errStr)
 				}
 			}
