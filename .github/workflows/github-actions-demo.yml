@@ -15,3 +15,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+name: Go-linter
+on: [push]
+uses: Jerome1337/golint-action@v1.0.2
+with:
+  golint-path: './src/...'
+
