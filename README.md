@@ -1,3 +1,7 @@
+[![Lint](https://github.com/jesusnoseq/gostmplcli/actions/workflows/lint.yml/badge.svg)](https://github.com/jesusnoseq/gostmplcli/actions/workflows/lint.yml)
+[![Unit test](https://github.com/jesusnoseq/gostmplcli/actions/workflows/test.yml/badge.svg)](https://github.com/jesusnoseq/gostmplcli/actions/workflows/test.yml)
+
+
 # gostmplcli
 A simple go template command line with zero dependencies
 
