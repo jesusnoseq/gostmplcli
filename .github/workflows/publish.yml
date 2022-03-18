@@ -1,8 +1,8 @@
-name: Build and Publish Docker Image
+name: Build and publish docker image
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build-and-publish:
@@ -13,7 +13,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag gostmplcli:$(date +%s)
 
-    - name: Publish to Registry
+    - name: Publish to dockerhub registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: jesusnoseq/gostmplcli
