@@ -1,5 +1,5 @@
 name: spellcheck
-on: pull_request
+on: push
 jobs:
   check-spelling:
     runs-on: ubuntu-latest
