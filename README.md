@@ -17,5 +17,5 @@ go install github.com/jesusnoseq/gostmplcli@latest
 
 ## Example from Docker image
 ```shell script
-docker run --rm -v ${pwd}:/app -it gostmplcli -r template_c.input -t test_data/*.input
+docker run --rm -v ${pwd}:/app -it jesusnoseq/gostmplcli -r template_c.input -t test_data/*.input
 ```
