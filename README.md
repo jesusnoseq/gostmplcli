@@ -7,7 +7,7 @@ A simple go template command line with zero dependencies
 
 ## Install
 ```shell script
-go get -u github.com/jesusnoseq/gostmplcli
+go install github.com/jesusnoseq/gostmplcli@latest
 ```
 
 ## Example from binary file
