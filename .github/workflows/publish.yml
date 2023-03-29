@@ -14,7 +14,7 @@ jobs:
       run: docker build . --file Dockerfile --tag gostmplcli:$(date +%s)
 
     - name: Publish to dockerhub registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: jesusnoseq/gostmplcli
         username: ${{ secrets.DOCKER_USERNAME }}
